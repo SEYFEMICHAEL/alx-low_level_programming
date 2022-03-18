@@ -1,25 +1,27 @@
 #include "main.h"
-
 /**
- * print_diagonal - print a diagonal line of backslashes
- *
- * @n: length of line to print
- *
- * Return: void
+ * print_diagonal - prints diagonal line
+ *@n: print int
+ * Return: Always 0.
  */
 void print_diagonal(int n)
 {
-	int i;
-	int m = n;
 
-	if (n <= 0)
-		_putchar('\n');
+int i;
+int b;
 
-	for (; n > 0; n--)
-	{
-		for (i = 0; i < m - n; i++)
-			_putchar(' ');
-		_putchar('\\');
-		_putchar('\n');
-	}
+if (n > 0)
+{
+for (i = 0; i < n; i++)
+{
+for (b = 0; b < i; b++)
+{
+_putchar (' ');
 }
+_putchar (92);
+_putchar ('\n');
+
+}
+
+}
+
