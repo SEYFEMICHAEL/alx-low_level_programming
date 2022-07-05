@@ -1,26 +1,32 @@
 #include "main.h"
-#include <stdio.h>
 /**
- * *_strncat - check the code for Holberton School students.
- *@dest:destino
- *@src:source
- *@n:integer
- * Return: Always 0.
+ * _strncat - concatnate two strings
+ * @dest: destinstion string
+ * @src: source string
+ * @n: most number of characters to concatenate
+ * Return: char *
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	char *a = dest;
+	int m;
+	int i;
 
-	while (*dest)
+	m = 0;
+
+	for (i = 0; i < 1000; i++)
 	{
-		dest++;
+		if (dest[i] == '\0')
+		{
+			break;
+		}
+		m++;
 	}
-	while (n-- && src)
+
+	for (i = 0; src[i] != '\0' && i < n; i++)
 	{
-		*dest = *src;
-		dest++;
-		src++;
+		dest[m + i] = src[i];
 	}
-	*dest = '\0';
-	return (a);
+
+	dest[m + i] = '\0';
+	return (dest);
 }
