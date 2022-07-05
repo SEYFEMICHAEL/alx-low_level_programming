@@ -1,24 +1,30 @@
 #include "main.h"
 /**
- * _strpbrk - check the code for Holberton School students.
- *@s:character
- *@accept:character
- * Return: Always 0.
+ * _strpbrk - searches a string for any of a set of bytes.
+ * @s: the string
+ * @accept: another string
+ * Return: A pointer
  */
 char *_strpbrk(char *s, char *accept)
 {
-	int i, j;
+	int len2 = 0;
+	int j = 0;
 
-	for (i = 0; s[i]; i++)
+	while (accept[j] != '\0')
 	{
-		for (j = 0; accept[j]; j++)
+		len2++;
+		j++;
+	}
+
+	do {
+		for (j = 0; j < len2; j++)
 		{
-			if (accept[j] == s[i])
+			if (*s == accept[j])
 			{
-				return (s + i);
+				return (s);
 			}
 		}
+	} while (*s++);
 
-	}
 	return (0);
 }

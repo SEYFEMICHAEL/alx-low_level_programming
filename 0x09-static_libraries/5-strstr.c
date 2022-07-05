@@ -1,28 +1,40 @@
 #include "main.h"
 /**
- * _strstr - check the code for Holberton School students.
- *@haystack:do something
- *@needle:do something more
- * Return: Always 0.
+ * _strstr - find first occurence of substring
+ * @haystack: string
+ * @needle: string
+ * Return: A pointer
  */
 char *_strstr(char *haystack, char *needle)
 {
-	while (*haystack)
+	int len1 = 0;
+	int len2 = 0;
+	int i = 0;
+	int j = 0;
+
+	while (haystack[i] != '\0')
 	{
-		char *Begin = haystack;
-		char *pattern = needle;
-
-		while (*haystack && *pattern && *haystack == *pattern)
-		{
-			haystack++;
-			pattern++;
-		}
-
-		if (!*pattern)
-		{
-			return (Begin);
-		}
-		haystack = Begin + 1;
+		len1++;
+		i++;
 	}
+
+	while (needle[j] != '\0')
+	{
+		len2++;
+		j++;
+	}
+
+	for (i = 0; i < len1; i++)
+	{
+		for (j = 0; j < len2; j++)
+		{
+			if (haystack[i + j] != needle[j])
+				break;
+		}
+
+		if (j == len2)
+			return (&haystack[i]);
+	}
+
 	return (0);
 }
