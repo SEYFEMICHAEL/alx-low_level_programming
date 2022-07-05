@@ -1,22 +1,25 @@
 #include "main.h"
 /**
- * _strncpy - copies two strings
- * @dest: string
- * @src: string
- * @n: number of charachters
- * Return: *dest
+ * *_strncpy - check the code for Holberton School students.
+ *@dest:destino
+ *@src:source
+ *@n:integer
+ * Return: Always 0.
  */
+
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i;
+	int a = 0;
 
-	for (i = 0; src[i] != '\0' && i < n; i++)
+	while (a < n && src[a] != '\0')
 	{
-		dest[i] = src[i];
+		dest[a] = src[a];
+		a++;
 	}
-	for ( ; i < n; i++)
+	while (a < n)
 	{
-		dest[i] = '\0';
+		dest[a] = '\0';
+		a++;
 	}
 	return (dest);
 }

@@ -1,32 +1,26 @@
 #include "main.h"
+#include <stdio.h>
 /**
- * _strncat - concatnate two strings
- * @dest: destinstion string
- * @src: source string
- * @n: most number of characters to concatenate
- * Return: char *
+ * *_strncat - check the code for Holberton School students.
+ *@dest:destino
+ *@src:source
+ *@n:integer
+ * Return: Always 0.
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int m;
-	int i;
+	char *a = dest;
 
-	m = 0;
-
-	for (i = 0; i < 1000; i++)
+	while (*dest)
 	{
-		if (dest[i] == '\0')
-		{
-			break;
-		}
-		m++;
+		dest++;
 	}
-
-	for (i = 0; src[i] != '\0' && i < n; i++)
+	while (n-- && src)
 	{
-		dest[m + i] = src[i];
+		*dest = *src;
+		dest++;
+		src++;
 	}
-
-	dest[m + i] = '\0';
-	return (dest);
+	*dest = '\0';
+	return (a);
 }

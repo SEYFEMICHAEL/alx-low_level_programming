@@ -1,20 +1,22 @@
 #include "main.h"
+
 /**
- * _strcmp - compare
- * @s1: parameter
- * @s2: parameter
- * Return: int
+ * _strcmp - check the code for Holberton School students.
+ *@s1:destino
+ *@s2:source
+ * Return: Always 0.
  */
+
 int _strcmp(char *s1, char *s2)
 {
-	int r = 0;
 
-	while (*s1 && (*s1 == *s2))
+	while (*s1 && *s2 && *s1 == *s2)
+
 	{
-		s1++;
-		s2++;
+		++s1;
+		++s2;
 	}
 
-	r = *s1 - *s2;
-	return (r);
+	return ((unsigned char)(*s1) - (unsigned char)(*s2));
+
 }
